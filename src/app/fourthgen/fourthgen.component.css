@@ -1,0 +1,19 @@
+
+
+figure {
+    display: inline-block;
+    margin-top: 50px;
+}
+
+mat-toolbar {
+    position: fixed;
+}
+
+header {
+    margin-left: 50px;
+}
+
+main {
+    margin-left: 100px;
+    margin-right: 100px;
+}

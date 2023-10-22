@@ -1,1 +1,91 @@
-<p>fifthgen works!</p>
+<header>
+    <h1>Fifth Generation</h1>
+</header>
+<main>
+    <p>
+        The huge advance of digital computation and mobile networking, which began in 
+        the 1990s, led to a new model of sophisticated forward C3 (command, control and 
+        communications) presence above the battlefield. Such aircraft had previously 
+        been large transport types adapted for the role, but information technology had 
+        advanced to the point that a much smaller and more agile plane could now carry 
+        the necessary data systems. Sophisticated automation and human interfaces could 
+        greatly reduce crew workload. It was now possible to combine the C3, fighter and 
+        ground support roles in a single, agile aircraft. Such a fighter—and its pilot—would 
+        need to be able to loiter for long periods, hold its own in combat, maintain battlefield 
+        awareness and seamlessly switch roles as the situation developed.
+    </p>
+    <p>
+        Parallel advances in materials, engine technology and electronics made such a machine 
+        possible. From the start of the new millennium, advanced systems concepts such as 
+        smart helmets, sensor/data fusion and subsidiary attack drones were becoming realities. 
+        Bringing together and integrating such advances, along with those of the fourth generation, 
+        created what has become known as the fifth generation of fighters. The first of these is 
+        generally acknowledged to be the Lockheed Martin F-22. Subsequent types include the Lockheed 
+        Martin F-35, Chengdu J-20, and Sukhoi Su-57. 
+    </p>
+    <figure>
+        <img src="../../assets/images/su57.jpg" alt="su57">
+        <figcaption>Sukhoi Su-57 Felon</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/j20.jpg" alt="j20">
+        <figcaption>Chengdu J-20 Mighty Dragon</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/f35.jpg" alt="f35">
+        <figcaption>Lockheed Martin F-35 Lighting II</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/f22.jpg" alt="f22">
+        <figcaption>Lockheed Martin F-22 Raptor</figcaption>
+    </figure>
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Aircraft Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="crew">
+            <th mat-header-cell *matHeaderCellDef> Crew Size </th>
+            <td mat-cell *matCellDef="let element"> {{element.crew}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="length">
+            <th mat-header-cell *matHeaderCellDef> Length (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.length}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="wingspan">
+            <th mat-header-cell *matHeaderCellDef> Winspan (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.wingspan}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="height">
+            <th mat-header-cell *matHeaderCellDef> Height (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.height}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="emptyWeight">
+            <th mat-header-cell *matHeaderCellDef> Empty Weight (lbs) </th>
+            <td mat-cell *matCellDef="let element"> {{element.emptyWeight}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="maxSpeed">
+            <th mat-header-cell *matHeaderCellDef> Max Speed (mph) </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxSpeed}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="range">
+            <th mat-header-cell *matHeaderCellDef> Range (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.range}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="rateOfClimb">
+            <th mat-header-cell *matHeaderCellDef> Rate of Climb (m/s) </th>
+            <td mat-cell *matCellDef="let element"> {{element.rateOfClimb}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</main>

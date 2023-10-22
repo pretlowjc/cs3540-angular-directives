@@ -6,6 +6,7 @@ import { SecondgenComponent } from "./secondgen/secondgen.component";
 import { ThirdgenComponent } from "./thirdgen/thirdgen.component";
 import { FourthgenComponent } from "./fourthgen/fourthgen.component";
 import { FifthgenComponent } from "./fifthgen/fifthgen.component";
+import { BreakdownComponent } from "./breakdown/breakdown.component";
 
 const routes: Routes = [
     {path: "", component: HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
     {path: "secondgen", component: SecondgenComponent},
     {path: "thirdgen", component: ThirdgenComponent},
     {path: "fourthgen", component: FourthgenComponent},
-    {path: "fifthgen", component: FifthgenComponent}
+    {path: "fifthgen", component: FifthgenComponent},
+    {path: "breakdown", component: BreakdownComponent}
 ];
 
 @NgModule({

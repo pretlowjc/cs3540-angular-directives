@@ -14,5 +14,6 @@ export class AppComponent {
     {name: "Third Generation", link: "thirdgen"},
     {name: "Fourth Generation", link: "fourthgen"},
     {name: "Fifth Generation", link: "fifthgen"},
+    {name: "Breakdown", link: "breakdown"}
   ]
 }

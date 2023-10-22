@@ -1,0 +1,36 @@
+<header>
+    <h1>Comparison of all Fighters From Each Generation</h1>
+    <strong>
+        NOTE: This is not a complete list of all aircraft from EACH generation. 
+        Maybe at some point I will add them all but that is a ton of aircraft to
+        do in such a short span of time.
+    </strong>
+</header>
+<main>
+    <table matSort (matSortChange)="sortData($event)">
+        <tr>
+          <th mat-sort-header="name">Aircraft Name</th>
+          <th mat-sort-header="crew">Crew Size</th>
+          <th mat-sort-header="length">Length (m)</th>
+          <th mat-sort-header="wingspan">Wingspan (m)</th>
+          <th mat-sort-header="height">Height (m)</th>
+          <th mat-sort-header="emptyWeight">Empty Weight (lbs)</th>
+          <th mat-sort-header="maxSpeed"> Max Speed (mph)</th>
+          <th mat-sort-header="range">Range (m)</th>
+          <th mat-sort-header="rateOfClimb">Rate of Climb (m/s)</th>
+
+        </tr>
+      
+        <tr *ngFor="let aircraft of sortedData">
+          <td>{{aircraft.name}}</td>
+          <td>{{aircraft.crew}}</td>
+          <td>{{aircraft.length}}</td>
+          <td>{{aircraft.wingspan}}</td>
+          <td>{{aircraft.height}}</td>
+          <td>{{aircraft.emptyWeight}}</td>
+          <td>{{aircraft.maxSpeed}}</td>
+          <td>{{aircraft.range}}</td>
+          <td>{{aircraft.rateOfClimb}}</td>
+        </tr>
+      </table>
+</main>

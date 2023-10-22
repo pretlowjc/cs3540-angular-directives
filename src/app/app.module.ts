@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule} from '@angular/material/sort';
+
 
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +19,8 @@ import { SecondgenComponent } from './secondgen/secondgen.component';
 import { ThirdgenComponent } from './thirdgen/thirdgen.component';
 import { FourthgenComponent } from './fourthgen/fourthgen.component';
 import { FifthgenComponent } from './fifthgen/fifthgen.component';
+import { BreakdownComponent } from './breakdown/breakdown.component';
+import { NgFor } from '@angular/common';
 
 
 @NgModule({
@@ -27,7 +31,8 @@ import { FifthgenComponent } from './fifthgen/fifthgen.component';
     SecondgenComponent,
     ThirdgenComponent,
     FourthgenComponent,
-    FifthgenComponent
+    FifthgenComponent,
+    BreakdownComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,9 @@ import { FifthgenComponent } from './fifthgen/fifthgen.component';
     MatSidenavModule,
     MatIconModule,
     AppRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    NgFor
   ],
   providers: [],
   bootstrap: [AppComponent]

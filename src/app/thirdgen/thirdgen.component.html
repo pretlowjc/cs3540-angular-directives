@@ -3,16 +3,86 @@
 </header>
 <main>
     <p>
-        The next generation of fighters were designed from the start to be multi-role. They were expected to carry a wide
-        range of weapons and other ordnance, such as air-to-ground missiles and laser-guided bombs, while also being able to
+        The next generation of fighters were designed from the start to be multi-role. They were expected to carry a
+        wide
+        range of weapons and other ordnance, such as air-to-ground missiles and laser-guided bombs, while also being
+        able to
         engage in air-to-air interception beyond visual range. Their supporting avionics included pulse-doppler radar,
         off-sight targeting and terrain-warning systems.
     </p>
     <p>
-        The advent of more economical turbofan engines brought extended range and sortie times, while increased thrust could
+        The advent of more economical turbofan engines brought extended range and sortie times, while increased thrust
+        could
         only partly deliver better performance and manoeuvrability across the speed range. Some designers resorted to
-        variable geometry or vectored thrust in an attempt to reconcile these opposites. Types such as the McDonnell Douglas F-4
-        Phantom, General Dynamics F-111, Mikoyan-Gurevich MiG-23, Sukhoi Su-17, Shenyang J-8, and Hawker Siddeley Harrier had varying
+        variable geometry or vectored thrust in an attempt to reconcile these opposites. Types such as the McDonnell
+        Douglas F-4
+        Phantom, General Dynamics F-111, Mikoyan-Gurevich MiG-23, Sukhoi Su-17, Shenyang J-8, and Hawker Siddeley
+        Harrier had varying
         degrees of success.
     </p>
+    <figure>
+        <img src="../../assets/images/f4.jpg" alt="f4">
+        <figcaption>McDonnell Douglas F-4 Phantom II</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/f111.jpg" alt="f111">
+        <figcaption>General Dynamics F-111 Aardvark</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/mig23.jpg" alt="mig23">
+        <figcaption>Mikoyan-Gurevich MiG-23</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/su17.jpg" alt="su17">
+        <figcaption>Sukoi Su-17</figcaption>
+    </figure>
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Aircraft Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="crew">
+            <th mat-header-cell *matHeaderCellDef> Crew Size </th>
+            <td mat-cell *matCellDef="let element"> {{element.crew}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="length">
+            <th mat-header-cell *matHeaderCellDef> Length (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.length}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="wingspan">
+            <th mat-header-cell *matHeaderCellDef> Winspan (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.wingspan}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="height">
+            <th mat-header-cell *matHeaderCellDef> Height (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.height}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="emptyWeight">
+            <th mat-header-cell *matHeaderCellDef> Empty Weight (lbs) </th>
+            <td mat-cell *matCellDef="let element"> {{element.emptyWeight}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="maxSpeed">
+            <th mat-header-cell *matHeaderCellDef> Max Speed (mph) </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxSpeed}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="range">
+            <th mat-header-cell *matHeaderCellDef> Range (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.range}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="rateOfClimb">
+            <th mat-header-cell *matHeaderCellDef> Rate of Climb (m/s) </th>
+            <td mat-cell *matCellDef="let element"> {{element.rateOfClimb}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 </main>

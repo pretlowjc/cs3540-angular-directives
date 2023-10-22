@@ -1,1 +1,114 @@
-<p>fourthgen works!</p>
+<header>
+    <h1>Fourth Generation</h1>
+</header>
+<main>
+    <p>
+        Following the mixed successes of the multirole generation, advanced technologies were 
+        being developed, such as fly-by-wire, composite materials, thrust-to-weight ratios greater 
+        than unity (enabling the plane to climb vertically), hypermaneuverability, advanced 
+        digital avionics and sensors such as synthetic radar and infrared search-and-track, and 
+        stealth. As these appeared piecemeal, designers returned to the fighter first and foremost, 
+        but with support roles mapped out as anticipated developments. The General Dynamics F-16 
+        introduced electronic flight control and wing-body blending, while the Saab 37 Viggen broke 
+        new ground in aerodynamic configuration with its canard foreplanes. The Anglo-American 
+        Harrier II and Soviet Sukhoi Su-27 highlighted extreme maneuverability with, respectively, 
+        strengthened exhaust nozzles for viffing (vectoring in forward flight) and maneuvering control 
+        at high angles of attack as in Pugachev's Cobra. The Panavia Tornado remained multi-role and 
+        developed a defensive/offensive sensor, avionics and weapons suite especially capable of 
+        anti-radar and anti-missile ground attack, while the Lockheed F-117 introduced stealth as a
+        design concept. Chinese People's Liberation Army (PLA), with a different generation 
+        system, classifies most fourth-generation fighters as the third generation.
+    </p>
+    <h2>4.5 Generation</h2>
+    <p>
+        Later variants of these and other aircraft progressively enhanced their characteristic technologies
+        and increasingly incorporated aspects of each other's, as well as adopting some emerging fifth-generation
+        technologies such as: 
+    </p>
+    <ul>
+        <li>active electronically scanned array radar</li>
+        <li>low probability of intercept radar</li>
+        <li>electro-optical targeting systems</li>
+        <li>sensor fusion</li>
+        <li>supercruise</li>
+        <li>link 16 like, high capacity digital network communications</li>
+        <li>use of composite materials to reduce the radar cross section</li>
+    </ul>
+    <p>
+        These partial upgrades to 5th generation capability have led some commentators to identify 
+        intermediate generations as 4.5 or 4+ and 4++. In some cases, such as the Mikoyan-Gurevich 
+        MiG-35 developed from the MiG-29 with fifth-generation avionics, the upgrade has been classed 
+        as fully fifth generation meet all fifth gen requirements except stealth. Many of these 
+        types remain in frontline service in 2023.
+    </p>
+    <p>
+        A number of new 4.5 generation types are being developed in the 2020s, post the emergence 
+        of the true 5th generation and contemporaneous with 6th generation aircraft development, 
+        these include the HAL Tejas MK 1A, CAC/PAC JF-17 Thunder Block 3, and KAI KF-21 Boramae.
+    </p>
+    <figure>
+        <img src="../../assets/images/f14.jpg" alt="f14">
+        <figcaption>Grumman F-14 Tomcat</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/f16.jpg" alt="f16">
+        <figcaption>General Dynamics F-16 Fighting Falcon</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/su27.jpg" alt="su27">
+        <figcaption>Sukhoi Su-27</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/viggen.jpg" alt="viggen">
+        <figcaption>Saab 27 Viggen</figcaption>
+    </figure>
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Aircraft Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="crew">
+            <th mat-header-cell *matHeaderCellDef> Crew Size </th>
+            <td mat-cell *matCellDef="let element"> {{element.crew}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="length">
+            <th mat-header-cell *matHeaderCellDef> Length (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.length}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="wingspan">
+            <th mat-header-cell *matHeaderCellDef> Winspan (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.wingspan}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="height">
+            <th mat-header-cell *matHeaderCellDef> Height (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.height}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="emptyWeight">
+            <th mat-header-cell *matHeaderCellDef> Empty Weight (lbs) </th>
+            <td mat-cell *matCellDef="let element"> {{element.emptyWeight}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="maxSpeed">
+            <th mat-header-cell *matHeaderCellDef> Max Speed (mph) </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxSpeed}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="range">
+            <th mat-header-cell *matHeaderCellDef> Range (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.range}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="rateOfClimb">
+            <th mat-header-cell *matHeaderCellDef> Rate of Climb (m/s) </th>
+            <td mat-cell *matCellDef="let element"> {{element.rateOfClimb}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</main>
