@@ -8,7 +8,7 @@
 </mat-toolbar>
 
 <mat-drawer-container class="container" autosize>
-  <mat-drawer #drawer class="sidenav" mode="side">
+  <mat-drawer #drawer class="sidenav" mode="over">
     <a *ngFor="let section of pages"
         [routerLink]="section.link"
         routerLinkActive="activeLink"

@@ -1,1 +1,82 @@
-<p>secondgen works!</p>
+<header>
+    <h1>Second Generation</h1>
+</header>
+<main>
+    <p>
+        The Korean War of 1950–1953 forced a major rethink. Guns proved unsuitable 
+        at such high speeds, while the need for multirole capability in battlefield 
+        support was rediscovered. Interceptor types emerging after the war used 
+        after-burning engines to give Mach 2 performance, while radar and infrared 
+        homing missiles greatly improved their accuracy and firepower. The American 
+        Century series such as the Lockheed F-104 Starfighter, as well as the Russian 
+        MiG-21, English Electric Lightning and French Dassault Mirage III were 
+        typical of this era. Many types were soon compromised by adaptations for 
+        battlefield support roles, and some of these would persist in new variants for 
+        multiple generations. 
+    </p>
+    <figure>
+        <img src="../../assets/images/f104.jpg" alt="f104">
+        <figcaption>Lockheed F-104 Starfighter</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/lightning.jpg" alt="lightning">
+        <figcaption>English Electric Lightning</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/mig21.jpg" alt="mig21">
+        <figcaption>Mikoyan-Gurevich MiG-21</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/mirage.jpg" alt="mirage">
+        <figcaption>Dassault Mirage III</figcaption>
+    </figure>
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Aircraft Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="crew">
+            <th mat-header-cell *matHeaderCellDef> Crew Size </th>
+            <td mat-cell *matCellDef="let element"> {{element.crew}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="length">
+            <th mat-header-cell *matHeaderCellDef> Length (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.length}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="wingspan">
+            <th mat-header-cell *matHeaderCellDef> Winspan (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.wingspan}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="height">
+            <th mat-header-cell *matHeaderCellDef> Height (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.height}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="emptyWeight">
+            <th mat-header-cell *matHeaderCellDef> Empty Weight (lbs) </th>
+            <td mat-cell *matCellDef="let element"> {{element.emptyWeight}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="maxSpeed">
+            <th mat-header-cell *matHeaderCellDef> Max Speed (mph) </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxSpeed}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="range">
+            <th mat-header-cell *matHeaderCellDef> Range (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.range}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="rateOfClimb">
+            <th mat-header-cell *matHeaderCellDef> Rate of Climb (m/s) </th>
+            <td mat-cell *matCellDef="let element"> {{element.rateOfClimb}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</main>

@@ -1,1 +1,91 @@
-<p>firstgen works!</p>
+<header>
+    <h1>First Generation</h1>
+</header>
+<main>
+    <p>
+        The earliest jet fighters appeared during and after the last years of
+        World War II. They were similar in most respects to their piston-engined
+        contemporaries, having straight, effectively unswept wings and being of
+        wood and/or light alloy construction. They had little or no avionics,
+        with their primary armament being manually-controlled guns.
+        <br><br>
+        The German Me 262 was the first operational jet fighter. It had a lightly
+        swept wing, but this was done principally to achieve balance, and the sweep
+        was deliberately kept too little to have a significant aerodynamic effect.
+        The Heinkel He 162 and Gloster Meteor also saw wartime service, while types
+        such as the de Havilland Vampire and Lockheed F-80 were still working up to
+        operational service when the war ended.
+        <br><br>
+        The introduction of the swept wing allowed transonic speeds to be reached,
+        but controllability was often limited at such speeds. These aircraft were
+        typically aimed at the air-superiority interceptor role. Notable types
+        which took part in the Korean War of 1950–1953 include the Soviet Mikoyan-Gurevich
+        MiG-15 and the North American F-86 Sabre. The Hawker Hunter appeared too late for
+        the war but was widely used and took part in several later ones.
+    </p>
+    <figure>
+        <img src="../../assets/images/me262.jpg" alt="me262">
+        <figcaption>Messerschmitt Me 262</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/f86.jpg" alt="f86">
+        <figcaption>North American F-86 Sabre</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/mig15.jpg" alt="mig15">
+        <figcaption>Mikoyan-Gurevich MiG-15</figcaption>
+    </figure>
+    <figure>
+        <img src="../../assets/images/p80.jpg" alt="p80">
+        <figcaption>Lockheed P-80 Shooting Star</figcaption>
+    </figure>
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Aircraft Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="crew">
+            <th mat-header-cell *matHeaderCellDef> Crew Size </th>
+            <td mat-cell *matCellDef="let element"> {{element.crew}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="length">
+            <th mat-header-cell *matHeaderCellDef> Length (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.length}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="wingspan">
+            <th mat-header-cell *matHeaderCellDef> Winspan (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.wingspan}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="height">
+            <th mat-header-cell *matHeaderCellDef> Height (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.height}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="emptyWeight">
+            <th mat-header-cell *matHeaderCellDef> Empty Weight (lbs) </th>
+            <td mat-cell *matCellDef="let element"> {{element.emptyWeight}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="maxSpeed">
+            <th mat-header-cell *matHeaderCellDef> Max Speed (mph) </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxSpeed}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="range">
+            <th mat-header-cell *matHeaderCellDef> Range (m) </th>
+            <td mat-cell *matCellDef="let element"> {{element.range}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="rateOfClimb">
+            <th mat-header-cell *matHeaderCellDef> Rate of Climb (m/s) </th>
+            <td mat-cell *matCellDef="let element"> {{element.rateOfClimb}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</main>
